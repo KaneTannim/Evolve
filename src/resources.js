@@ -197,7 +197,7 @@ export function craftCost(){
             }
         });
     }
-    return costs;
+    return 0;
 }
 
 export const craftingRatio = (function(){
@@ -521,7 +521,7 @@ export const craftingRatio = (function(){
                 multi_bd: multi_bd
                 
             }
-            return craft_total;
+            return 0;
         }
     }
 })();
@@ -879,7 +879,7 @@ function loadResource(name,wiki,max,rate,tradable,stackable,color){
                     let num = vol * craft_costs[res][i].a * keyMultiplier();
                     costs = costs + `<div>${global.resource[craft_costs[res][i].r].name} ${num}</div>`;
                 }
-                return costs;
+                return 0;
             }
         }
     });
@@ -896,7 +896,7 @@ function loadResource(name,wiki,max,rate,tradable,stackable,color){
                 let bonus = +(craftingRatio(res,'manual').multiplier * 100).toFixed(0);
                 popper.append($(`<div class="has-text-info">${loc('manual_crafting_hover_bonus',[bonus.toLocaleString(),global.resource[res].name])}</div>`));
                 
-                let craft_costs = craftCost();
+                let craft_costs = 0;
                 let crafts = $(`<div><span class="has-text-success">${loc('manual_crafting_hover_craft')} </span></div>`);
                 let num_crafted = 0;
                 if (typeof vol !== 'number'){
